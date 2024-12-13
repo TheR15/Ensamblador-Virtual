@@ -1,0 +1,11 @@
+.mensaje{
+    h1{
+        text-align: center;
+        &::after{
+            content: '';
+            margin-top: 2rem;
+            display: block;
+            width: 100%;
+        }
+    }
+}

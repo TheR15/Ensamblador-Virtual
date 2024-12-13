@@ -1,0 +1,57 @@
+.componentes {
+    @include tablet {
+        @include grid(2, .5rem); // Dos columnas en tablet
+    }
+
+    @include desktop {
+        @include grid(3, .5rem); // Cuatro columnas en desktop
+    }
+
+    @include grid(1, 1rem); // Una columna por defecto
+
+    .card-componentes {
+        border: 1px solid $gris;
+        border-radius: 1rem;
+        background-color: $blanco;
+        margin: 1rem;
+
+        h2 {
+            background-color: $grisClaro;
+            padding: 1.8rem;
+            margin: 0;
+            text-align: left;
+            font-size: 1.8rem;
+            font-weight: $bold;
+        }
+        .datos-componentes{
+            padding: 2rem;
+            div{
+                display: flex;
+                justify-content: space-between;
+                margin: 1rem;
+                p{
+                    font-size: 1.6rem;
+                    color: #616a6b;
+                    margin: 0;
+                }
+                .cantidad{
+                    font-weight: $bold;
+                    color: $azulFuerte;
+                    font-size: 2.5rem;
+                }
+                label{
+                    font-weight: $bold;
+                }
+            }
+            a{
+                @include boton($azulFuerte, block);
+                margin-top: 1rem;
+                padding: .5rem;
+            }
+        }
+        transition: all .3s ease-in-out;
+        &:hover{
+            transform: translateY(1rem);
+        }
+    }
+}

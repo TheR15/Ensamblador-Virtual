@@ -1,0 +1,20 @@
+.inicio{
+    //background-image: url(/src/img/header.webp);
+}
+
+.header{
+    height: 90vh;
+    &.inicio{
+        background-position: center center;
+        background-size: cover;
+
+        @include tablet{
+            min-height: 70rem;
+        }
+        .contenido-header{
+            @include tablet{
+                min-height: 70rem;
+            }
+        }
+    }
+}

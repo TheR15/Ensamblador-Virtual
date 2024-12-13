@@ -1,0 +1,13 @@
+.dashboard{
+    display: flex;
+    height: 100vh;
+    @include tablet{
+        display: flex;
+        height: 100vh;
+    }
+
+    .principal{
+        flex: 1;
+    }
+}
+

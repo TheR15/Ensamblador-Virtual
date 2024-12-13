@@ -1,0 +1,135 @@
+.contenedor-tabla {
+    @include telefono {
+        display: none;
+    }
+
+    @include tablet {
+        display: inline-table;
+    }
+
+    display: inline-table;
+    width: 98%;
+    border: 1px solid $gris;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.tabla {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 1rem;
+    background-color: $blanco;
+}
+
+//Encabezado tabla
+tr {
+    text-align: center;
+
+    th {
+        padding: 1rem;
+        color: #616a6b;
+    }
+}
+
+//Datos tabla
+.datos-tabla {
+    border-bottom: 1px solid $gris;
+    td {
+        img {
+            margin: 0 auto;
+            width: 8rem;
+            height: 8rem;
+        }
+
+        padding: 1rem;
+    }
+    transition: all .3s ease-in-out;
+    &:hover{
+        background-color: $grisClaro;
+    }
+}
+.acciones {
+    display: flex;
+    justify-content: center;
+    column-gap: 1rem;
+
+    button {
+        padding: .8rem;
+        background-color: $blanco;
+        border: 1px solid $gris;
+        border-radius: .5rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $grisClaro;
+        }
+    }
+}
+
+//Tabla para moviles
+
+.tabla-moviles {
+    @include telefono {
+        display: block;
+    }
+
+    @include tablet {
+        display: none;
+    }
+
+    .contenedor-tabla-moviles {
+        display: flex;
+        flex-direction: column;
+        background-color: $blanco;
+        border: 1px solid $gris;
+        border-radius: 1rem;
+        margin: 1rem;
+
+        .imagen-nombre-componente {
+            display: flex;
+            align-items: center;
+            column-gap: 2rem;
+            padding: 1rem;
+
+            h3 {
+                font-size: 2rem;
+                font-weight: $bold;
+            }
+
+            img {
+                width: 8rem;
+                height: 8rem;
+            }
+        }
+
+        .datos-componentes {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+
+            h3 {
+                font-size: 1.8rem;
+                color: #616a6b;
+                margin: 0;
+            }
+        }
+
+        .acciones{
+            margin: 0 auto;
+            button {
+                padding: .8rem;
+                background-color: $blanco;
+                border: 1px solid $gris;
+                border-radius: .5rem;
+                margin-bottom: 1rem;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: $grisClaro;
+                }
+            }
+        }
+    }
+}

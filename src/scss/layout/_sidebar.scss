@@ -1,0 +1,127 @@
+.contenedor-sidebar {
+    width: 100%;
+    max-width: 10rem;
+    transition: all .3s ease-in-out;
+
+    @include telefono {
+        width: 100%;
+        max-width: 8rem;
+    }
+
+    @include tablet {
+        width: 100%;
+        max-width: 10rem;
+    }
+
+    @include desktop {
+        width: 100%;
+        max-width: 25rem;
+    }
+
+}
+
+.sidebar {
+    position: sticky;
+    padding: .5rem;
+    height: 100%;
+    background-color: $blanco;
+    border: 1px solid $gris;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: $bold;
+        margin: 0;
+    }
+
+    @include tablet {
+        .elementos {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .activo {
+        fill: $azulFuerte;
+        background-color: rgb(219 234 254);
+        color: $azulFuerte;
+        border-radius: 1rem;
+        svg{
+            color: $azulFuerte;
+        }
+    }
+
+    a {
+        background-color: $blanco;
+        display: flex;
+        align-items: center;
+        color: $negro;
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: $bold;
+        margin: 1rem 1rem 0em 1rem;
+        padding: 1rem;
+        transition: all .2s ease-in;
+        border-radius: .5rem;
+
+        img,
+        svg {
+            color: $negro;
+            margin-right: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        &:not(.activo):hover {
+            background-color: $gris;
+            border-radius: .5rem;
+            transition: all .1s ease-in;
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    // Ocultar los spans en tamaños de pantalla menores que tablet
+    @media (max-width: 1028px) {
+        h1 {
+            display: none;
+        }
+
+        .elementos {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+
+            a {
+                padding: 1rem;
+
+                svg,
+                img {
+                    margin: 0;
+                }
+            }
+        }
+
+        .elementos a span {
+            display: none;
+        }
+    }
+
+    .logo {
+        h1 {
+            text-align: left;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            margin-left: 1.8rem;
+        }
+    }
+}

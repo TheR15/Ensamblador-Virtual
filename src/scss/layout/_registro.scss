@@ -1,0 +1,105 @@
+.header.inicio{
+    background-color: $blanco;
+}
+.registro{
+    padding: 2rem;
+    border: 1px solid $gris;
+    border-radius: 1rem;
+    background-color: $blanco;
+}
+
+@include tablet{
+    .registro {
+        width: 70rem;
+        @include grid (2, 2rem);
+        align-items: center;
+        margin: 0 auto;
+    
+        .derecha {
+            width: 100%;
+            height: 100%;
+            background-image: url(/src/img/dereha.webp);
+            background-size: cover;
+            background-position: center center;
+            border-radius: .5rem;
+        }
+    }
+}
+
+.seccion{
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        text-align: left;
+        font-weight: $bold;
+        line-height: 5rem;
+        margin: 0;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 80%;
+            height: .5rem;
+            background-color: $azulFuerte;
+            border-radius: 1rem;
+            margin-top: 1.6rem;
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    label {
+        font-size: 2rem;
+    }
+
+    input {
+        padding: 1rem;
+        background-color: $azul;
+        border: 1px solid darken($azul, 10);
+        border-radius: .5rem;
+    }
+
+    input[type="submit"] {
+        font-size: 1.8rem;
+        font-weight: $bold;
+        color: $blanco;
+        background-color: $azulFuerte;
+
+        &:hover {
+            background-color: darken($azulFuerte, 10);
+            cursor: pointer;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        text-align: left;
+        margin: 0;
+        color: $grisOscuro;
+
+        &:last-of-type {
+            text-align: end;
+            margin-top: 1.6rem;
+            margin-bottom: 1.6rem;
+        }
+    }
+
+    a {
+        color: $azulFuerte;
+    }
+}
+
+.seccion-confirmar{
+    width: 100%;
+    margin: 0 auto;
+    .btn-confirmar{
+        @include boton ($azulFuerte,block);
+    }
+}

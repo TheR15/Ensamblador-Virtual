@@ -1,0 +1,11 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    },
+    "autoload": {
+        "Classes\\": "./classes",
+        "psr-4": {
+            "Model\\": "./models"
+        }
+    }
+}

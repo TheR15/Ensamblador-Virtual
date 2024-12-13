@@ -1,0 +1,19 @@
+.contenedor-busqueda {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin: 0 1rem;
+    padding: 1rem;
+
+    label {
+        font-size: 1.8rem;
+    }
+
+    input {
+        width: 100%;
+        border: none;
+        border-radius: .5rem;
+        border: 1px solid $gris;
+        padding: 1rem;
+    }
+}

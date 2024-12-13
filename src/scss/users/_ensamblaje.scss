@@ -1,0 +1,367 @@
+.contenedor-ensamblaje {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    column-gap: 2rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "area-componentes area-ensamblaje area-ensamblaje area-ensamblaje"
+        "area-componentes area-ensamblaje area-ensamblaje area-ensamblaje"
+        "area-componentes area-ensamblaje area-ensamblaje area-ensamblaje"
+        "area-componentes area-ensamblaje area-ensamblaje area-ensamblaje";
+}
+
+.area-componentes {
+    grid-area: area-componentes;
+}
+
+.area-ensamblaje {
+    grid-area: area-ensamblaje;
+}
+
+
+
+.area-componentes {
+    h2 {
+        font-size: 2.5rem;
+        font-weight: $bold;
+        text-align: left;
+        margin: 0;
+    }
+
+    .botones-lista {
+        padding: 2rem;
+        margin-top: 2rem;
+        flex-direction: column;
+        border: 1px solid $gris;
+        border-radius: 1rem;
+    }
+
+    .botones-componente {
+        @include grid(3, 2rem);
+        gap: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        button {
+            @include boton($blanco, 2rem);
+            color: $negro;
+            border: 1px solid $gris;
+        }
+
+        .activo {
+            background-color: rgb(219 234 254);
+            border: 1px solid $azulFuerte;
+            color: $azulFuerte;
+        }
+    }
+
+    .lista-componente {
+        border-radius: .5rem;
+
+        .gabinetes,
+        .motherboards,
+        .procesadores,
+        .disipadores,
+        .rams,
+        .almacenamientos,
+        .graficas,
+        .fuentes {
+            display: none;
+        }
+    }
+}
+
+.indicacion {
+    text-align: center;
+    color: #707b7c;
+}
+
+.contenedor-busqueda {
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.datos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 2rem;
+    border: 1px solid $gris;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    height: 10rem;
+    cursor: move;
+
+    .img-tex {
+        display: flex;
+        align-items: center;
+        column-gap: 2rem;
+
+        .marca {
+            font-weight: $bold;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        select {
+            border: 1px solid $gris;
+            border-radius: .5rem;
+            padding: .5rem 1rem;
+        }
+
+        img {
+            width: 8rem;
+            height: 8rem;
+        }
+    }
+
+    button {
+        padding: .8rem;
+        background-color: $blanco;
+        border: 1px solid $gris;
+        border-radius: .5rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $grisClaro;
+        }
+    }
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        transform: scale(102%);
+        background-color: $grisClaro;
+        border: 1px solid darken($color: $gris, $amount: 5);
+    }
+}
+
+//Ensamblaje
+
+.area-ensamblaje {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    .info {
+        border: 1px solid $gris;
+        border-radius: 1rem;
+        padding: 2rem;
+
+        .h2-limpiar{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            h2 {
+                margin: 0;
+                font-size: 2rem;
+                font-weight: $bold;
+                text-align: left;
+            }
+            button{
+                @include boton($azulFuerte, block);
+                padding: 1rem;
+                svg{
+                    fill: $blanco;
+                }
+            }
+        }
+    }
+
+    .boton-titulo {
+        display: flex;
+        justify-content: space-between;
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: $bold;
+            text-align: left;
+            margin: 0rem 0rem 0rem 2rem;
+        }
+
+        button {
+            @include boton($azulFuerte, block);
+            padding: .5rem 1rem;
+        }
+    }
+
+    .area {
+        .dropzone {
+            position: relative;
+            border: 2px dashed $gris;
+            border-radius: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            height: 10rem;
+
+            p {
+                text-align: center;
+                margin-top: 4rem;
+                font-size: 1.5rem;
+                color: #707b7c;
+            }
+        }
+
+        .contenedor-almacenamiento {
+            display: flex;
+            column-gap: 2rem;
+            width: 100%;
+            height: 100%;
+
+            .dropzone {
+                width: 100%;
+            }
+        }
+    }
+
+    .PC-info {
+        display: grid;
+        margin-top: 2rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-auto-columns: 1fr;
+        column-gap: 2rem;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "PC PC info";
+    }
+
+    .PC {
+        grid-area: PC;
+    }
+
+    .info {
+        grid-area: info;
+    }
+
+}
+
+/* Define la animación de pulsación */
+@keyframes pulsar {
+    0% {
+        opacity: 1;
+        stroke: #0C70F2;
+    }
+
+    50% {
+        opacity: 0.5;
+        stroke: #0C70F2;
+    }
+
+    100% {
+        opacity: 1;
+        stroke: #0C70F2;
+    }
+}
+
+/* Clase para aplicar la animación */
+.dropzone-pulsando {
+    animation: pulsar 1s infinite;
+    stroke: #0C70F2;
+}
+
+.input-nombre-ensamblaje {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    label {
+        font-size: 1.8rem;
+    }
+
+    input {
+        padding: .5rem 1rem;
+        background-color: $azul;
+        border: 1px solid darken($azul, 10);
+        border-radius: .5rem;
+    }
+}
+
+.acciones {
+    .submit-crear-ensamblaje {
+        @include boton($azulFuerte, block);
+        width: 100%;
+    }
+}
+
+.PC {
+    margin: 0 auto;
+    padding: 2rem;
+    border: 2px dashed $gris;
+    border-radius: 1rem;
+
+    .borde-gris-componente {
+        stroke: $gris;
+    }
+
+    .fill-gris-componente {
+        fill: $gris;
+    }
+
+    .disipador,
+    .procesador-amd,
+    .procesador-intel,
+    .grafica-nvidia,
+    .grafica-radeon,
+    .m2,
+    .SATA,
+    .fuente,
+    .ram {
+        display: none;
+    }
+
+    .cls-7.borde-gris-componente.ram {
+        display: none;
+    }
+
+    .marca-color {
+        fill: #dc7633;
+    }
+
+    .letraNvidia {
+        fill: #76b900;
+        stroke: #76b900;
+    }
+
+    .letraRadeon {
+        fill: #d35400;
+        stroke: #d35400;
+    }
+
+    .grafica-contenedor {
+        fill: #1d1d1b;
+    }
+
+    .grafica-disipador {
+        fill: $blanco;
+        stroke: $blanco;
+    }
+
+    .grafica-nvidia,
+    .grafica-radeon {
+        position: relative;
+        /* Esto permite moverlo usando left, right, etc. */
+        transition: transform 0.5s ease;
+        /* Animación suave */
+    }
+
+    .grafica-placa-nvidia {
+        fill: #76b900;
+    }
+
+    .grafica-placa-radeon {
+        fill: #d35400;
+    }
+}

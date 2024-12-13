@@ -1,0 +1,25 @@
+.barra-dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $blanco;
+    border-radius: 1rem;
+    border: 1px solid $gris;
+    padding: 1rem 2rem;
+    margin: 1rem;
+
+    h3 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+
+    span {
+        color: $azulFuerte;
+    }
+
+    a {
+        @include boton($azulFuerte, flex);
+        padding: .5rem 1rem;
+        margin: 0;
+    }
+}

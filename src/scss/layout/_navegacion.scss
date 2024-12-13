@@ -1,0 +1,89 @@
+.barra {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 8rem;
+            height: 8rem;
+        }
+
+        h1 {
+            font-weight: $bold;
+            color: $negro;
+        }
+    }
+}
+
+.navegacion {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transition: visibility .3s ease-in-out, opacity 0.5s ease-in-out, height 0.5s linear;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    a {
+        font-size: 1.7rem;
+        font-weight: $bold;
+        color: $negro;
+        align-items: center;
+        transition: all .2s linear;
+
+        &:last-of-type {
+            @include boton($azulFuerte,block);
+            padding: .5rem 1rem;
+            margin-right: 3rem;
+
+            &:hover {
+                background-color: darken($azulFuerte, 10);
+                color: $blanco;
+            }
+        }
+
+        &:hover {
+            color: $azulFuerte;
+            transition: all .2s linear;
+        }
+    }
+}
+
+.mobile-menu {
+    margin: 0 auto;
+    cursor: pointer;
+
+    @include tablet {
+        display: none;
+    }
+
+    img {
+        width: 5rem;
+    }
+}
+
+.mostrar {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}

@@ -1,0 +1,68 @@
+.titulo-componente {
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+}
+
+.info-componente {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+
+    @include telefono{
+        display: flex;
+    }
+    @include tablet{
+        
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    align-items: center;
+    }
+    
+    img {
+        @include telefono {
+            display: none;
+        }
+
+        @include tablet {
+            display: block;
+        }
+    }
+
+    .especificaciones {
+        h3 {
+            text-align: left;
+            font-size: 2rem;
+            font-weight: $bold;
+            padding: 1rem;
+            margin: 0;
+        }
+
+        table {
+            border-collapse: collapse;
+
+            tr {
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background-color: $grisClaro;
+                }
+            }
+
+            th {
+                text-align: left;
+
+                border-bottom: 1px solid $gris;
+            }
+
+            td {
+                text-align: left;
+                padding: 2rem;
+                border-bottom: 1px solid $gris;
+            }
+        }
+    }
+
+}

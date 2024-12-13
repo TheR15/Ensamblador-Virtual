@@ -1,0 +1,234 @@
+.contenedor-ensambles {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    .titulo-boton {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+            h1 {
+                font-size: 2.3rem;
+                font-weight: $bold;
+                text-align: left;
+                margin: 0;
+            }
+        }
+
+        .btn-nueva-pc {
+            a {
+                @include boton(#18181b, block);
+                display: flex;
+                align-items: center;
+                column-gap: 1rem;
+            }
+
+            svg {
+                fill: $blanco;
+            }
+        }
+    }
+
+    .ensambles {
+        @include telefono {
+            @include grid(1, 2rem);
+        }
+
+        @include tablet {
+            @include grid(3, 2rem);
+        }
+
+        @include grid(3, 2rem);
+
+        .card-computadora-ensamblada {
+            padding: 2rem;
+            border: 1px solid $gris;
+            border-radius: 1rem;
+
+            .nombre-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h2 {
+                    font-size: 2.2rem;
+                    font-weight: $bold;
+                    margin: 0;
+                }
+
+                button {
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+
+                    svg {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                }
+            }
+
+            .caracteristicas-eliminar {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .caracteristicas-computadora {
+                    margin-top: 2rem;
+
+                    div {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 2rem;
+
+                        svg {
+                            width: 2rem;
+                            height: 2rem;
+                            color: $grisOscuro;
+                        }
+
+                        label {
+                            font-size: 1.6rem;
+                            color: #616a6b;
+                        }
+                    }
+                }
+
+                .eliminar-ensamble {
+                    button {
+                        background-color: transparent;
+                        border: none;
+                        padding: 0;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .ram-fecha {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 2rem;
+
+                .ram {
+                    font-size: 1.4rem;
+                    font-weight: $bold;
+                    padding: 0rem 1rem;
+                    background-color: $gris;
+                    border-radius: 2rem;
+                }
+
+                .fecha {
+                    font-size: 1.5rem;
+                    color: #616a6b;
+                }
+            }
+
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                transform: translateY(1rem);
+                background-color: $grisClaro;
+            }
+        }
+    }
+}
+
+.modal-PC {
+    position: fixed;
+    background-color: rgb(0 0 0 / .8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .contenedor-modal-pc {
+        width: 80%;
+        height: 80%;
+        background-color: $blanco;
+        border-radius: 1rem;
+        margin: 0 auto;
+        transform: translateY(-50rem);
+        transition: all .5s ease-in-out;
+        opacity: 0;
+
+        h1 {
+            font-weight: $bold;
+            padding: 2rem;
+            margin: 0;
+        }
+
+        .contenedor {
+            width: 90%;
+
+            .acciones {
+                display: flex;
+                justify-content: end;
+            }
+        }
+
+        &.animar {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        &.cerrar {
+            transform: translateY(-200%);
+            opacity: 0;
+        }
+
+        .cerrar-modal {
+            @include boton($azulFuerte, block)
+        }
+    }
+}
+
+.diagrama-pc {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    column-gap: 4rem;
+    width: 80%;
+
+    .PC-ensamblada {
+        width: 100%;
+
+        .AMD {
+            .color-AMD {
+                fill: #d35400;
+            }
+
+            transition: all .5s ease-in-out;
+        }
+
+        .intel {
+            .color-intel {
+                fill: #3498db;
+            }
+        }
+
+        .ram {
+            stroke: #e1e1e1;
+        }
+    }
+
+    .especificaciones {
+        padding: 5rem;
+        width: 100%;
+        height: 80vh;
+        overflow: scroll;
+
+        .img-tex {
+            column-gap: 4rem;
+        }
+
+    }
+
+    .disipador {
+        transition: all .3s ease-in-out;
+    }
+}

@@ -1,0 +1,26 @@
+.error{
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    font-weight: $bold;
+    text-transform: uppercase;
+    color: $rojo;
+    background-color: lighten($rojo , 45);
+    border-radius: .5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-left: 0.5rem solid $rojo;
+}
+.exito{
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    font-weight: $bold;
+    text-transform: uppercase;
+    color: $verdeFuerte;
+    background-color: lighten($verdeFuerte, 45);
+    border-radius: .5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-left: 0.5rem solid $verdeFuerte;
+}

@@ -1,0 +1,56 @@
+footer {
+    background-color: $azul;
+
+    @include tablet {
+        .contenedor {
+            h2 {
+                display: none;
+            }
+        }
+    }
+
+    .contenedor {
+        padding: 2rem;
+
+        h2 {
+            margin: 0;
+        }
+
+        .redes-sociales {
+            display: flex;
+            column-gap: 1rem;
+            padding: 2rem;
+            justify-content: center;
+
+            img {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+        
+        .navegacion {
+            justify-content: end;
+        }
+
+        @include tablet {
+            .redes-sociales {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+
+                a {
+                    color: $negro;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .contenedor-footer {
+        @include grid (2, 2rem);
+        align-content: space-between;
+        align-items: center;
+        padding: 2rem;
+    }
+}

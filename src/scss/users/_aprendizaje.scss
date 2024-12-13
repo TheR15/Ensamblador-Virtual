@@ -1,0 +1,76 @@
+.contenedor-aprendizaje {
+    width: 90%;
+    margin: 0 auto;
+    .descripcion-pagina {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+
+        h1{
+            font-size: 2.3rem;
+            font-weight: $bold;
+            margin: 0;
+        }
+    }
+
+    .contenedor-cards{
+        @include grid (3, 2rem);
+        .card{
+            padding: 2rem;
+            border: 1px solid $gris;
+            border-radius: .5rem;
+            .componente-icono{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h2{
+                    font-weight: $bold;
+                    margin: 0;
+                }
+                svg{
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+            lite-youtube{
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                border-radius: .5rem;
+            }
+            button{
+                @include boton($azulFuerte, block);
+                width: 100%;
+            }
+        }
+    }
+}
+.aprendizaje-modal{
+    width: 80rem;
+    height: 80%;
+    overflow-y: scroll;
+    h1{
+        font-weight: $bold;
+    }
+    .contenedor-modal{
+        width: 80%;
+        margin: 0 auto;
+        .caracteristicas{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            ul{
+                li{
+                    font-size: 2rem;
+                }
+            }
+            img{
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+    }
+
+}

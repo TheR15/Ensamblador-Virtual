@@ -1,0 +1,36 @@
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/globales';
+@import 'base/utilidades';
+@import 'base/botones';
+@import 'base/darkMode';
+@import 'base/mixins';
+@import 'base/alertas';
+
+// Login //
+
+@import 'layout/registro';
+@import 'layout/navegacion';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/reestablecer';
+@import 'layout/sidebar';
+@import 'layout/dashboard';
+@import 'layout/barra';
+@import 'layout/modal';
+
+// Admin //
+
+@import 'admin/agregar';
+@import 'admin/cards';
+@import 'admin/tabla';
+@import 'admin/info';
+@import 'admin/busqueda';
+
+// Usuarios //
+@import 'users/principal';
+@import 'users/ensamblaje';
+@import 'users/ensambles';
+@import 'users/aprendizaje';
+@import 'users/quiz';
+
